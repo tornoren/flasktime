@@ -38,7 +38,9 @@ def fetch_all_pages_from_given_book_and_give_me_pdf_now(URN, page_count):
     
     # send the pdf file back to the end-user's browser as a file
     return send_file(f'./books/{URN}/book.pdf', attachment_filename='book.pdf')
-
+if __name__ == "__main__":
+    app.run(threaded=True, port=5000)
+    
 
 
 #/download/{{book.metadata.identifiers.urn}}

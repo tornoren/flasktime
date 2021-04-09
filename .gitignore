@@ -2,3 +2,4 @@
 *.pdf
 *.pyc
 books/*
+venv
