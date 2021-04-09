@@ -4,15 +4,10 @@ from flask import render_template
 from flask import request
 from flask import send_file
 import downloadbooks as db
-# Klassen har variabler og definisjoner vi kan bruke
 app = Flask(__name__)
-#__ betyr at jeg ikke skal gjøre noe med eller tenke
-#__ viser ofte til noe internt
 
 
 
-#Route with form for doing a search
-# /search
 
 
 @app.route('/search')
@@ -40,7 +35,7 @@ def fetch_all_pages_from_given_book_and_give_me_pdf_now(URN, page_count):
     return send_file(f'./books/{URN}/book.pdf', attachment_filename='book.pdf')
 if __name__ == "__main__":
     app.run(threaded=True, port=5000)
-    
+
 
 
 #/download/{{book.metadata.identifiers.urn}}
