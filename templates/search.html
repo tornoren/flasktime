@@ -1,0 +1,14 @@
+<!-- Søkeboks -->
+<form>
+    <input type="text" name="search_string" value={{search_string}}>
+    <input value="Find book" type="submit">
+</form>
+<!-- Dersom det finnes en ?search_string i URLen, vis resultater her under -->
+
+<ul>
+{% for book in booklist %}
+<!-- Loop over en liste med resultater her. Et resultat skal være en lenke med URLen `/download/<URN -->
+<li><a href="/download/{{book.metadata.identifiers.urn}}/{{book.metadata.pageCount}}">{{book.metadata.title}}</a> ({{book.metadata.pageCount}} pages)</li>
+{% endfor %}
+</ul>
+
